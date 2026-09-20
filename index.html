@@ -810,7 +810,14 @@
                             <label data-id="468" for="contact-message-v5w8" class="block text-sm font-medium text-navy mb-1.5">Message <span data-id="469" class="text-red-500" aria-hidden="true">*</span></label>
                             <textarea data-id="470" id="contact-message-v5w8" name="message" required rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-base focus:border-cyan focus:ring-2 focus:ring-cyan/20 transition-colors bg-bg resize-y" placeholder="Describe your issue or question..."></textarea>
                         </div>
-                        <button data-id="471" type="submit" id="contact-submit-x6y9" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-cyan hover:bg-cyan-dark text-white font-semibold px-8 py-3.5 rounded-xl text-base transition-colors min-h-[44px] shadow-lg shadow-cyan/20" aria-label="Send your message">
+                        <button data-id="471" type="submit" id="contact-submit-x6y9" onclick="gtag('event', 'contact_form_submit', { 'button_id': 'contact-submit-x6y9' });" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-cyan hover:bg-cyan-dark text-white font-semibold px-8 py-3.5 rounded-xl text-base transition-colors min-h-[44px] shadow-lg shadow-cyan/20" aria-label="Send your message">
+                         
+                            
+                          
+                            
+                            
+                            
+                            inline-flex items-center justify-center gap-2 bg-cyan hover:bg-cyan-dark text-white font-semibold px-8 py-3.5 rounded-xl text-base transition-colors min-h-[44px] shadow-lg shadow-cyan/20" aria-label="Send your message">
                             Send Message
                             <i data-id="472" data-lucide="arrow-right" class="w-5 h-5" aria-hidden="true"></i>
                         </button>
