@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RTE Tech Solutions – Official Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1A3C6E',
+                        'navy-dark': '#0F2A52',
+                        'navy-light': '#2A5A9A',
+                        accent: '#2E75B6',
+                        cyan: '#00C2D4',
+                        'cyan-dark': '#00A3B3',
+                        'cyan-light': '#33D4E2',
+                        bg: '#F4F8FD',
+                        card: '#FFFFFF',
+                        text: '#1A1A2E',
+                        'text-muted': '#5A6278',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+        :root {
+            --navy: #1A3C6E;
+            --navy-dark: #0F2A52;
+            --accent: #2E75B6;
+            --cyan: #00C2D4;
+            --cyan-dark: #00A3B3;
+            --bg: #F4F8FD;
+            --card: #FFFFFF;
+            --text: #1A1A2E;
+            --text-muted: #5A6278;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); }
+
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 1rem;
+            z-index: 9999;
+            padding: 0.75rem 1.25rem;
+            background: var(--cyan);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 0 0 0.5rem 0.5rem;
+            transition: top 0.2s;
+        }
+        .skip-link:focus {
+            top: 0;
+            outline: 2px solid var(--navy);
+            outline-offset: 2px;
+        }
+
+        *:focus-visible {
+            outline: 2px solid var(--cyan);
+            outline-offset: 2px;
+        }
+
+        .nav-shadow { box-shadow: 0 2px 12px rgba(26,60,110,0.10); }
+
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            color: var(--navy);
+            transition: color 0.2s;
+            padding-bottom: 2px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cyan);
+            transition: width 0.25s ease;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        .nav-link:hover { color: var(--accent); }
+
+        .hero-grid {
+            background-image:
+                linear-gradient(rgba(0,194,212,0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,194,212,0.07) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .service-card {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(26,60,110,0.12);
+        }
+
+        .pricing-card {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .pricing-card.hidden-card {
+            opacity: 0;
+            transform: scale(0.95);
+            position: absolute;
+            pointer-events: none;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .tab-btn {
+            transition: all 0.2s ease;
+        }
+        .tab-btn.active-tab {
+            background: var(--cyan);
+            color: #fff;
+            border-color: var(--cyan);
+        }
+
+        .benefit-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(26,60,110,0.10);
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            body { background: #fff; }
+            .pricing-card.hidden-card {
+                opacity: 1 !important;
+                transform: none !important;
+                position: static !important;
+                pointer-events: auto !important;
+                height: auto !important;
+                overflow: visible !important;
+                display: block !important;
+            }
+            section { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body data-id="0" class="bg-bg font-inter">
+
+<app-icon data-id="1" hidden data-icon="monitor-smartphone" data-palette="Blue"></app-icon>
+
+<a data-id="2" href="#main-content" class="skip-link" id="skip-link-a1b2">Skip to main content</a>
+
+<!-- HEADER / NAV -->
+<header data-id="3" id="site-header-h3k9" class="sticky top-0 z-50 bg-white transition-shadow duration-300" role="banner">
+    <div data-id="4" class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16">
+        <a data-id="5" href="#hero" class="font-poppins font-bold text-xl md:text-2xl text-navy tracking-tight" aria-label="RTE Tech Solutions - Home">
+            RTE Tech Solutions
+        </a>
+        <!-- Desktop Nav -->
+        <nav data-id="6" class="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Main navigation">
+            <a data-id="7" href="#hero" class="nav-link text-sm lg:text-base" data-nav="hero">Home</a>
+            <a data-id="8" href="#services" class="nav-link text-sm lg:text-base" data-nav="services">Services</a>
+            <a data-id="9" href="#pricing" class="nav-link text-sm lg:text-base" data-nav="pricing">Pricing</a>
+            <a data-id="10" href="#about" class="nav-link text-sm lg:text-base" data-nav="about">About</a>
+            <a data-id="11" href="#contact" class="nav-link text-sm lg:text-base" data-nav="contact">Contact</a>
+        </nav>
+        <!-- Mobile Menu Button -->
+        <button data-id="12" id="mobile-menu-btn-x7m2" class="md:hidden p-2 text-navy rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu-nav-q4w8">
+            <i data-id="13" data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
+        </button>
+    </div>
+    <!-- Mobile Nav -->
+    <nav data-id="14" id="mobile-menu-nav-q4w8" class="hidden fixed inset-0 bg-white z-50 flex-col" role="navigation" aria-label="Mobile navigation">
+        <div data-id="15" class="flex items-center justify-between px-4 h-16 border-b border-gray-100">
+            <span data-id="16" class="font-poppins font-bold text-xl text-navy">RTE Tech Solutions</span>
+            <button data-id="17" id="mobile-menu-close-r5n1" class="p-2 text-navy rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Close menu">
+                <i data-id="18" data-lucide="x" class="w-6 h-6" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div data-id="19" class="flex flex-col gap-2 p-6">
+            <a data-id="20" href="#hero" class="mobile-nav-link text-lg font-medium text-navy py-3 px-4 rounded-lg hover:bg-bg transition-colors" data-nav="hero">Home</a>
+            <a data-id="21" href="#services" class="mobile-nav-link text-lg font-medium text-navy py-3 px-4 rounded-lg hover:bg-bg transition-colors" data-nav="services">Services</a>
+            <a data-id="22" href="#pricing" class="mobile-nav-link text-lg font-medium text-navy py-3 px-4 rounded-lg hover:bg-bg transition-colors" data-nav="pricing">Pricing</a>
+            <a data-id="23" href="#about" class="mobile-nav-link text-lg font-medium text-navy py-3 px-4 rounded-lg hover:bg-bg transition-colors" data-nav="about">About</a>
+            <a data-id="24" href="#contact" class="mobile-nav-link text-lg font-medium text-navy py-3 px-4 rounded-lg hover:bg-bg transition-colors" data-nav="contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<main data-id="25" id="main-content" role="main">
+
+    <!-- SECTION 1: HERO -->
+    <section data-id="26" id="hero" class="relative overflow-hidden" aria-labelledby="hero-heading-t9k3">
+        <div data-id="27" class="absolute inset-0 bg-gradient-to-br from-navy-dark via-navy to-accent hero-grid"></div>
+        <div data-id="28" class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-20 md:py-28 lg:py-36 text-center">
+            <h1 data-id="29" id="hero-heading-t9k3" class="font-poppins font-extrabold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white leading-tight mb-4 md:mb-6">
+                Memphis's Trusted<br data-id="30" class="hidden sm:block"> Computer Repair Experts
+            </h1>
+            <p data-id="31" class="text-cyan-light text-lg md:text-xl lg:text-2xl font-medium mb-6 md:mb-8 max-w-2xl mx-auto">
+                Fast, affordable, on-site IT services for homes and businesses
+            </p>
+            <div data-id="32" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5 mb-8 md:mb-10 text-white text-sm md:text-base">
+                <span data-id="33" aria-hidden="true">📍</span>
+                <span data-id="34">Serving Memphis, TN &amp; Surrounding Areas</span>
+            </div>
+            <div data-id="35" class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 no-print">
+                <a data-id="36" href="#pricing" class="inline-flex items-center gap-2 bg-cyan hover:bg-cyan-dark text-white font-semibold px-8 py-3.5 rounded-xl text-base md:text-lg transition-colors min-h-[44px] shadow-lg shadow-cyan/20" aria-label="View our pricing">
+                    View Pricing
+                    <i data-id="37" data-lucide="arrow-down" class="w-5 h-5" aria-hidden="true"></i>
+                </a>
+                <a data-id="38" href="#contact" class="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy font-semibold px-8 py-3.5 rounded-xl text-base md:text-lg transition-colors min-h-[44px]" aria-label="Contact us">
+                    Contact Us
+                    <i data-id="39" data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i>
+                </a>
+            </div>
+            <p data-id="40" class="text-gray-300 text-sm">By Appointment Only</p>
+
+<p class="text-white text-lg font-semibold mt-4">
+    📞 (901) 443-7051
+</p>
+
+
+        </div>
+    </section>
+
+    <!-- SECTION 2: STATS BAR -->
+    <section data-id="41" id="stats-bar-s2v4" class="bg-white border-b border-gray-100" aria-label="Quick stats">
+        <div data-id="42" class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-10">
+            <div data-id="43" class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
+                <div data-id="44" class="flex flex-col items-center gap-2">
+                    <span data-id="45" class="text-3xl" aria-hidden="true">🛠️</span>
+                    <span data-id="46" class="font-poppins font-bold text-2xl md:text-3xl text-navy">34</span>
+                    <span data-id="47" class="text-text-muted text-sm font-medium">Services Offered</span>
+                </div>
+                <div data-id="48" class="flex flex-col items-center gap-2">
+                    <span data-id="49" class="text-3xl" aria-hidden="true">💰</span>
+                    <span data-id="50" class="font-poppins font-bold text-2xl md:text-3xl text-navy">$35</span>
+                    <span data-id="51" class="text-text-muted text-sm font-medium">Starting At</span>
+                </div>
+                <div data-id="52" class="flex flex-col items-center gap-2">
+                    <span data-id="53" class="text-3xl" aria-hidden="true">📍</span>
+                    <span data-id="54" class="font-poppins font-bold text-2xl md:text-3xl text-navy">Mobile</span>
+                    <span data-id="55" class="text-text-muted text-sm font-medium">& On-Site</span>
+                </div>
+                <div data-id="56" class="flex flex-col items-center gap-2">
+                    <span data-id="57" class="text-3xl" aria-hidden="true">📅</span>
+                    <span data-id="58" class="font-poppins font-bold text-2xl md:text-3xl text-navy">Flexible</span>
+                    <span data-id="59" class="text-text-muted text-sm font-medium">By Appointment</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: SERVICES OVERVIEW -->
+    <section data-id="60" id="services" class="py-16 md:py-20 lg:py-24" aria-labelledby="services-heading-k8j1">
+        <div data-id="61" class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+            <h2 data-id="62" id="services-heading-k8j1" class="font-poppins font-bold text-2xl md:text-3xl lg:text-4xl text-navy text-center mb-12 md:mb-16">
+                What We Fix &amp; Support
+            </h2>
+            <div data-id="63" class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <!-- Card 1 -->
+                <div data-id="64" class="service-card bg-card rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
+                    <span data-id="65" class="text-4xl mb-4 block" aria-hidden="true">🔧</span>
+                    <h3 data-id="66" class="font-poppins font-semibold text-lg md:text-xl text-navy mb-2">Laptop &amp; Desktop Repair</h3>
+                    <p data-id="67" class="text-text-muted text-sm md:text-base leading-relaxed mb-4">Screens, keyboards, power jacks, SSD upgrades, and more. We handle hardware repairs for most makes and models.</p>
+                    <a data-id="68" href="#pricing" class="inline-flex items-center gap-1 text-cyan font-medium text-sm hover:text-cyan-dark transition-colors pricing-scroll-link" data-target-tab="laptop" aria-label="See pricing for Laptop and Desktop Repair">
+                        See Pricing <i data-id="69" data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <!-- Card 2 -->
+                <div data-id="70" class="service-card bg-card rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
+                    <span data-id="71" class="text-4xl mb-4 block" aria-hidden="true">🛡️</span>
+                    <h3 data-id="72" class="font-poppins font-semibold text-lg md:text-xl text-navy mb-2">Virus &amp; Malware Removal</h3>
+                    <p data-id="73" class="text-text-muted text-sm md:text-base leading-relaxed mb-4">From standard virus sweeps to advanced ransomware cleanup. We secure your system and restore performance.</p>
+                    <a data-id="74" href="#pricing" class="inline-flex items-center gap-1 text-cyan font-medium text-sm hover:text-cyan-dark transition-colors pricing-scroll-link" data-target-tab="virus" aria-label="See pricing for Virus and Malware Removal">
+                        See Pricing <i data-id="75" data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <!-- Card 3 -->
+                <div data-id="76" class="service-card bg-card rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
+                    <span data-id="77" class="text-4xl mb-4 block" aria-hidden="true">⚙️</span>
+                    <h3 data-id="78" class="font-poppins font-semibold text-lg md:text-xl text-navy mb-2">OS Cleanup &amp; Optimization</h3>
+                    <p data-id="79" class="text-text-muted text-sm md:text-base leading-relaxed mb-4">Speed up a sluggish PC with tune-ups, driver updates, and fresh OS reinstalls. We get your system running like new.</p>
+                    <a data-id="80" href="#pricing" class="inline-flex items-center gap-1 text-cyan font-medium text-sm hover:text-cyan-dark transition-colors pricing-scroll-link" data-target-tab="os" aria-label="See pricing for OS Cleanup and Optimization">
+                        See Pricing <i data-id="81" data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <!-- Card 4 -->
+                <div data-id="82" class="service-card bg-card rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
+                    <span data-id="83" class="text-4xl mb-4 block" aria-hidden="true">🌐</span>
+                    <h3 data-id="84" class="font-poppins font-semibold text-lg md:text-xl text-navy mb-2">Network &amp; Software Services</h3>
+                    <p data-id="85" class="text-text-muted text-sm md:text-base leading-relaxed mb-4">Home network setup, Wi-Fi troubleshooting, printer installation, remote support, and more.</p>
+                    <a data-id="86" href="#pricing" class="inline-flex items-center gap-1 text-cyan font-medium text-sm hover:text-cyan-dark transition-colors pricing-scroll-link" data-target-tab="network" aria-label="See pricing for Network and Software Services">
+                        See Pricing <i data-id="87" data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: PRICING -->
+    <section data-id="88" id="pricing" class="py-16 md:py-20 lg:py-24 bg-white" aria-labelledby="pricing-heading-m3p7">
+        <div data-id="89" class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+            <h2 data-id="90" id="pricing-heading-m3p7" class="font-poppins font-bold text-2xl md:text-3xl lg:text-4xl text-navy text-center mb-3">
+                Service Pricing Guide
+            </h2>
+            <p data-id="91" class="text-text-muted text-center text-sm md:text-base mb-10 md:mb-12">All prices are estimates. Contact us for a free quote.</p>
+
+            <!-- Filter Tabs -->
+            <div data-id="92" class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 md:mb-12 no-print" role="tablist" aria-label="Filter services by category">
+                <button data-id="93" class="tab-btn active-tab px-4 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-medium border-2 border-cyan min-h-[44px]" role="tab" aria-selected="true" data-filter="all">All Services</button>
+                <button data-id="94" class="tab-btn px-4 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-medium border-2 border-navy text-navy min-h-[44px]" role="tab" aria-selected="false" data-filter="laptop">Laptop &amp; Desktop</button>
+                <button data-id="95" class="tab-btn px-4 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-medium border-2 border-navy text-navy min-h-[44px]" role="tab" aria-selected="false" data-filter="virus">Virus &amp; Malware</button>
+                <button data-id="96" class="tab-btn px-4 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-medium border-2 border-navy text-navy min-h-[44px]" role="tab" aria-selected="false" data-filter="os">OS Optimization</button>
+                <button data-id="97" class="tab-btn px-4 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-medium border-2 border-navy text-navy min-h-[44px]" role="tab" aria-selected="false" data-filter="network">Network &amp; Software</button>
+            </div>
+
+            <!-- Pricing Cards Grid -->
+            <div data-id="98" id="pricing-grid-w2e6" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+                <!-- Laptop & Desktop Repair -->
+                <div data-id="99" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="laptop">
+                    <div data-id="100" class="flex items-start justify-between gap-3">
+                        <div data-id="101" class="flex-1">
+                            <div data-id="102" class="flex items-center gap-2 mb-1"><span data-id="103" aria-hidden="true">🔍</span><h3 data-id="104" class="font-poppins font-semibold text-sm md:text-base text-navy">Diagnostic Fee</h3></div>
+                            <p data-id="105" class="text-text-muted text-xs md:text-sm leading-relaxed">System inspection to ID faults; credited toward repair</p>
+                        </div>
+                        <span data-id="106" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$35</span>
+                    </div>
+                </div>
+                <div data-id="107" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="laptop">
+                    <div data-id="108" class="flex items-start justify-between gap-3">
+                        <div data-id="109" class="flex-1">
+                            <div data-id="110" class="flex items-center gap-2 mb-1"><span data-id="111" aria-hidden="true">🖥️</span><h3 data-id="112" class="font-poppins font-semibold text-sm md:text-base text-navy">Screen Replacement</h3></div>
+                            <p data-id="113" class="text-text-muted text-xs md:text-sm leading-relaxed">Panel swap; varies by model</p>
+                        </div>
+                        <span data-id="114" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$89–$149</span>
+                    </div>
+                </div>
+                <div data-id="115" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="laptop">
+                    <div data-id="116" class="flex items-start justify-between gap-3">
+                        <div data-id="117" class="flex-1">
+                            <div data-id="118" class="flex items-center gap-2 mb-1"><span data-id="119" aria-hidden="true">⌨️</span><h3 data-id="120" class="font-poppins font-semibold text-sm md:text-base text-navy">Keyboard Replacement</h3></div>
+                            <p data-id="121" class="text-text-muted text-xs md:text-sm leading-relaxed">Full keyboard swap, labor included</p>
+                        </div>
+                        <span data-id="122" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$55–$85</span>
+                    </div>
+                </div>
+                <div data-id="123" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="laptop">
+                    <div data-id="124" class="flex items-start justify-between gap-3">
+                        <div data-id="125" class="flex-1">
+                            <div data-id="126" class="flex items-center gap-2 mb-1"><span data-id="127" aria-hidden="true">🔌</span><h3 data-id="128" class="font-poppins font-semibold text-sm md:text-base text-navy">DC Power Jack Repair</h3></div>
+                            <p data-id="129" class="text-text-muted text-xs md:text-sm leading-relaxed">Faulty charging port repair</p>
+                        </div>
+                        <span data-id="130" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$65–$95</span>
+                    </div>
+                </div>
+                <div data-id="131" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="laptop">
+                    <div data-id="132" class="flex items-start justify-between gap-3">
+                        <div data-id="133" class="flex-1">
+                            <div data-id="134" class="flex items-center gap-2 mb-1"><span data-id="135" aria-hidden="true">💾</span><h3 data-id="136" class="font-poppins font-semibold text-sm md:text-base text-navy">HDD Replacement</h3></div>
+                            <p data-id="137" class="text-text-muted text-xs md:text-sm leading-relaxed">Hard drive swap; parts extra</p>
+                        </div>
+                        <span data-id="138" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$75 + parts</span>
+                    </div>
+                </div>
+                <div data-id="139" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="laptop">
+                    <div data-id="140" class="flex items-start justify-between gap-3">
+                        <div data-id="141" class="flex-1">
+                            <div data-id="142" class="flex items-center gap-2 mb-1"><span data-id="143" aria-hidden="true">⚡</span><h3 data-id="144" class="font-poppins font-semibold text-sm md:text-base text-navy">SSD Upgrade</h3></div>
+                            <p data-id="145" class="text-text-muted text-xs md:text-sm leading-relaxed">Faster SSD install; parts extra</p>
+                        </div>
+                        <span data-id="146" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$85 + parts</span>
+                    </div>
+                </div>
+                <div data-id="147" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="laptop">
+                    <div data-id="148" class="flex items-start justify-between gap-3">
+                        <div data-id="149" class="flex-1">
+                            <div data-id="150" class="flex items-center gap-2 mb-1"><span data-id="151" aria-hidden="true">🧠</span><h3 data-id="152" class="font-poppins font-semibold text-sm md:text-base text-navy">RAM Upgrade</h3></div>
+                            <p data-id="153" class="text-text-muted text-xs md:text-sm leading-relaxed">Memory expansion; parts extra</p>
+                        </div>
+                        <span data-id="154" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$45 + parts</span>
+                    </div>
+                </div>
+                <div data-id="155" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="laptop">
+                    <div data-id="156" class="flex items-start justify-between gap-3">
+                        <div data-id="157" class="flex-1">
+                            <div data-id="158" class="flex items-center gap-2 mb-1"><span data-id="159" aria-hidden="true">🛠️</span><h3 data-id="160" class="font-poppins font-semibold text-sm md:text-base text-navy">Motherboard Diagnosis</h3></div>
+                            <p data-id="161" class="text-text-muted text-xs md:text-sm leading-relaxed">Deep board-level fault assessment</p>
+                        </div>
+                        <span data-id="162" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$75–$125</span>
+                    </div>
+                </div>
+                <div data-id="163" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="laptop">
+                    <div data-id="164" class="flex items-start justify-between gap-3">
+                        <div data-id="165" class="flex-1">
+                            <div data-id="166" class="flex items-center gap-2 mb-1"><span data-id="167" aria-hidden="true">🌬️</span><h3 data-id="168" class="font-poppins font-semibold text-sm md:text-base text-navy">Fan Cleaning &amp; Repaste</h3></div>
+                            <p data-id="169" class="text-text-muted text-xs md:text-sm leading-relaxed">Deep clean with fresh thermal paste</p>
+                        </div>
+                        <span data-id="170" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$45</span>
+                    </div>
+                </div>
+                <div data-id="171" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="laptop">
+                    <div data-id="172" class="flex items-start justify-between gap-3">
+                        <div data-id="173" class="flex-1">
+                            <div data-id="174" class="flex items-center gap-2 mb-1"><span data-id="175" aria-hidden="true">🔋</span><h3 data-id="176" class="font-poppins font-semibold text-sm md:text-base text-navy">Battery Replacement</h3></div>
+                            <p data-id="177" class="text-text-muted text-xs md:text-sm leading-relaxed">Battery swap; parts extra</p>
+                        </div>
+                        <span data-id="178" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$55 + parts</span>
+                    </div>
+                </div>
+                <div data-id="179" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="laptop">
+                    <div data-id="180" class="flex items-start justify-between gap-3">
+                        <div data-id="181" class="flex-1">
+                            <div data-id="182" class="flex items-center gap-2 mb-1"><span data-id="183" aria-hidden="true">💧</span><h3 data-id="184" class="font-poppins font-semibold text-sm md:text-base text-navy">Liquid Damage Assessment</h3></div>
+                            <p data-id="185" class="text-text-muted text-xs md:text-sm leading-relaxed">Evaluate liquid damage extent</p>
+                        </div>
+                        <span data-id="186" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$55</span>
+                    </div>
+                </div>
+
+                <!-- Virus & Malware Removal -->
+                <div data-id="187" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="virus">
+                    <div data-id="188" class="flex items-start justify-between gap-3">
+                        <div data-id="189" class="flex-1">
+                            <div data-id="190" class="flex items-center gap-2 mb-1"><span data-id="191" aria-hidden="true">🦠</span><h3 data-id="192" class="font-poppins font-semibold text-sm md:text-base text-navy">Standard Virus Removal</h3></div>
+                            <p data-id="193" class="text-text-muted text-xs md:text-sm leading-relaxed">Full scan and threat elimination</p>
+                        </div>
+                        <span data-id="194" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$79</span>
+                    </div>
+                </div>
+                <div data-id="195" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="virus">
+                    <div data-id="196" class="flex items-start justify-between gap-3">
+                        <div data-id="197" class="flex-1">
+                            <div data-id="198" class="flex items-center gap-2 mb-1"><span data-id="199" aria-hidden="true">🔬</span><h3 data-id="200" class="font-poppins font-semibold text-sm md:text-base text-navy">Deep Malware &amp; Rootkit Clean</h3></div>
+                            <p data-id="201" class="text-text-muted text-xs md:text-sm leading-relaxed">Advanced hidden-threat removal</p>
+                        </div>
+                        <span data-id="202" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$99</span>
+                    </div>
+                </div>
+                <div data-id="203" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="virus">
+                    <div data-id="204" class="flex items-start justify-between gap-3">
+                        <div data-id="205" class="flex-1">
+                            <div data-id="206" class="flex items-center gap-2 mb-1"><span data-id="207" aria-hidden="true">🚨</span><h3 data-id="208" class="font-poppins font-semibold text-sm md:text-base text-navy">Ransomware Cleanup</h3></div>
+                            <p data-id="209" class="text-text-muted text-xs md:text-sm leading-relaxed">Assess and remove ransomware</p>
+                        </div>
+                        <span data-id="210" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$125</span>
+                    </div>
+                </div>
+                <div data-id="211" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="virus">
+                    <div data-id="212" class="flex items-start justify-between gap-3">
+                        <div data-id="213" class="flex-1">
+                            <div data-id="214" class="flex items-center gap-2 mb-1"><span data-id="215" aria-hidden="true">🌐</span><h3 data-id="216" class="font-poppins font-semibold text-sm md:text-base text-navy">Browser Hijack &amp; Adware</h3></div>
+                            <p data-id="217" class="text-text-muted text-xs md:text-sm leading-relaxed">Restore browser and remove adware</p>
+                        </div>
+                        <span data-id="218" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$59</span>
+                    </div>
+                </div>
+                <div data-id="219" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="virus">
+                    <div data-id="220" class="flex items-start justify-between gap-3">
+                        <div data-id="221" class="flex-1">
+                            <div data-id="222" class="flex items-center gap-2 mb-1"><span data-id="223" aria-hidden="true">🛡️</span><h3 data-id="224" class="font-poppins font-semibold text-sm md:text-base text-navy">Security Software Install</h3></div>
+                            <p data-id="225" class="text-text-muted text-xs md:text-sm leading-relaxed">Install and configure AV protection</p>
+                        </div>
+                        <span data-id="226" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$39</span>
+                    </div>
+                </div>
+                <div data-id="227" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="virus">
+                    <div data-id="228" class="flex items-start justify-between gap-3">
+                        <div data-id="229" class="flex-1">
+                            <div data-id="230" class="flex items-center gap-2 mb-1"><span data-id="231" aria-hidden="true">✅</span><h3 data-id="232" class="font-poppins font-semibold text-sm md:text-base text-navy">Post-Removal Health Check</h3></div>
+                            <p data-id="233" class="text-text-muted text-xs md:text-sm leading-relaxed">System check included after any removal</p>
+                        </div>
+                        <span data-id="234" class="inline-flex items-center bg-green-100 text-green-700 font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">Included</span>
+                    </div>
+                </div>
+
+                <!-- OS Cleanup & Optimization -->
+                <div data-id="235" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="os">
+                    <div data-id="236" class="flex items-start justify-between gap-3">
+                        <div data-id="237" class="flex-1">
+                            <div data-id="238" class="flex items-center gap-2 mb-1"><span data-id="239" aria-hidden="true">🚀</span><h3 data-id="240" class="font-poppins font-semibold text-sm md:text-base text-navy">Windows Tune-Up</h3></div>
+                            <p data-id="241" class="text-text-muted text-xs md:text-sm leading-relaxed">Clear bloat and optimize Windows</p>
+                        </div>
+                        <span data-id="242" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$55</span>
+                    </div>
+                </div>
+                <div data-id="243" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="os">
+                    <div data-id="244" class="flex items-start justify-between gap-3">
+                        <div data-id="245" class="flex-1">
+                            <div data-id="246" class="flex items-center gap-2 mb-1"><span data-id="247" aria-hidden="true">⏱️</span><h3 data-id="248" class="font-poppins font-semibold text-sm md:text-base text-navy">Startup Optimization</h3></div>
+                            <p data-id="249" class="text-text-muted text-xs md:text-sm leading-relaxed">Trim startup apps for faster boot</p>
+                        </div>
+                        <span data-id="250" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$45</span>
+                    </div>
+                </div>
+                <div data-id="251" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="os">
+                    <div data-id="252" class="flex items-start justify-between gap-3">
+                        <div data-id="253" class="flex-1">
+                            <div data-id="254" class="flex items-center gap-2 mb-1"><span data-id="255" aria-hidden="true">🔧</span><h3 data-id="256" class="font-poppins font-semibold text-sm md:text-base text-navy">Windows System File Repair</h3></div>
+                            <p data-id="257" class="text-text-muted text-xs md:text-sm leading-relaxed">Fix corrupt or missing system files</p>
+                        </div>
+                        <span data-id="258" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$65</span>
+                    </div>
+                </div>
+                <div data-id="259" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="os">
+                    <div data-id="260" class="flex items-start justify-between gap-3">
+                        <div data-id="261" class="flex-1">
+                            <div data-id="262" class="flex items-center gap-2 mb-1"><span data-id="263" aria-hidden="true">📦</span><h3 data-id="264" class="font-poppins font-semibold text-sm md:text-base text-navy">OS Reinstall – Keep Files</h3></div>
+                            <p data-id="265" class="text-text-muted text-xs md:text-sm leading-relaxed">Reinstall Windows, preserve data</p>
+                        </div>
+                        <span data-id="266" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$85</span>
+                    </div>
+                </div>
+                <div data-id="267" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="os">
+                    <div data-id="268" class="flex items-start justify-between gap-3">
+                        <div data-id="269" class="flex-1">
+                            <div data-id="270" class="flex items-center gap-2 mb-1"><span data-id="271" aria-hidden="true">🗂️</span><h3 data-id="272" class="font-poppins font-semibold text-sm md:text-base text-navy">OS Reinstall – Clean Wipe</h3></div>
+                            <p data-id="273" class="text-text-muted text-xs md:text-sm leading-relaxed">Full clean install from scratch</p>
+                        </div>
+                        <span data-id="274" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$75</span>
+                    </div>
+                </div>
+                <div data-id="275" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="os">
+                    <div data-id="276" class="flex items-start justify-between gap-3">
+                        <div data-id="277" class="flex-1">
+                            <div data-id="278" class="flex items-center gap-2 mb-1"><span data-id="279" aria-hidden="true">🔄</span><h3 data-id="280" class="font-poppins font-semibold text-sm md:text-base text-navy">Driver Update &amp; Device Check</h3></div>
+                            <p data-id="281" class="text-text-muted text-xs md:text-sm leading-relaxed">Update all drivers, verify hardware</p>
+                        </div>
+                        <span data-id="282" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$45</span>
+                    </div>
+                </div>
+                <div data-id="283" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="os">
+                    <div data-id="284" class="flex items-start justify-between gap-3">
+                        <div data-id="285" class="flex-1">
+                            <div data-id="286" class="flex items-center gap-2 mb-1"><span data-id="287" aria-hidden="true">🗃️</span><h3 data-id="288" class="font-poppins font-semibold text-sm md:text-base text-navy">Registry Cleanup</h3></div>
+                            <p data-id="289" class="text-text-muted text-xs md:text-sm leading-relaxed">Scan and resolve registry errors</p>
+                        </div>
+                        <span data-id="290" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$49</span>
+                    </div>
+                </div>
+
+                <!-- Network & Software Services -->
+                <div data-id="291" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="network">
+                    <div data-id="292" class="flex items-start justify-between gap-3">
+                        <div data-id="293" class="flex-1">
+                            <div data-id="294" class="flex items-center gap-2 mb-1"><span data-id="295" aria-hidden="true">🏠</span><h3 data-id="296" class="font-poppins font-semibold text-sm md:text-base text-navy">Home Network Setup</h3></div>
+                            <p data-id="297" class="text-text-muted text-xs md:text-sm leading-relaxed">Full home network configuration</p>
+                        </div>
+                        <span data-id="298" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$75</span>
+                    </div>
+                </div>
+                <div data-id="299" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="network">
+                    <div data-id="300" class="flex items-start justify-between gap-3">
+                        <div data-id="301" class="flex-1">
+                            <div data-id="302" class="flex items-center gap-2 mb-1"><span data-id="303" aria-hidden="true">📶</span><h3 data-id="304" class="font-poppins font-semibold text-sm md:text-base text-navy">Wi-Fi Troubleshooting</h3></div>
+                            <p data-id="305" class="text-text-muted text-xs md:text-sm leading-relaxed">Diagnose and improve wireless coverage</p>
+                        </div>
+                        <span data-id="306" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$55</span>
+                    </div>
+                </div>
+                <div data-id="307" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="network">
+                    <div data-id="308" class="flex items-start justify-between gap-3">
+                        <div data-id="309" class="flex-1">
+                            <div data-id="310" class="flex items-center gap-2 mb-1"><span data-id="311" aria-hidden="true">📡</span><h3 data-id="312" class="font-poppins font-semibold text-sm md:text-base text-navy">Router/Modem Setup</h3></div>
+                            <p data-id="313" class="text-text-muted text-xs md:text-sm leading-relaxed">Configure router or modem settings</p>
+                        </div>
+                        <span data-id="314" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$49</span>
+                    </div>
+                </div>
+                <div data-id="315" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="network">
+                    <div data-id="316" class="flex items-start justify-between gap-3">
+                        <div data-id="317" class="flex-1">
+                            <div data-id="318" class="flex items-center gap-2 mb-1"><span data-id="319" aria-hidden="true">🔗</span><h3 data-id="320" class="font-poppins font-semibold text-sm md:text-base text-navy">Wired Network Drop Install</h3></div>
+                            <p data-id="321" class="text-text-muted text-xs md:text-sm leading-relaxed">Per-drop wired network install</p>
+                        </div>
+                        <span data-id="322" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$65/drop</span>
+                    </div>
+                </div>
+                <div data-id="323" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="network">
+                    <div data-id="324" class="flex items-start justify-between gap-3">
+                        <div data-id="325" class="flex-1">
+                            <div data-id="326" class="flex items-center gap-2 mb-1"><span data-id="327" aria-hidden="true">💿</span><h3 data-id="328" class="font-poppins font-semibold text-sm md:text-base text-navy">Software Install &amp; Config</h3></div>
+                            <p data-id="329" class="text-text-muted text-xs md:text-sm leading-relaxed">Install and configure applications</p>
+                        </div>
+                        <span data-id="330" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$35/app</span>
+                    </div>
+                </div>
+                <div data-id="331" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="network">
+                    <div data-id="332" class="flex items-start justify-between gap-3">
+                        <div data-id="333" class="flex-1">
+                            <div data-id="334" class="flex items-center gap-2 mb-1"><span data-id="335" aria-hidden="true">📧</span><h3 data-id="336" class="font-poppins font-semibold text-sm md:text-base text-navy">Microsoft 365 Setup</h3></div>
+                            <p data-id="337" class="text-text-muted text-xs md:text-sm leading-relaxed">Account setup and app configuration</p>
+                        </div>
+                        <span data-id="338" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$49</span>
+                    </div>
+                </div>
+                <div data-id="339" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="network">
+                    <div data-id="340" class="flex items-start justify-between gap-3">
+                        <div data-id="341" class="flex-1">
+                            <div data-id="342" class="flex items-center gap-2 mb-1"><span data-id="343" aria-hidden="true">🖨️</span><h3 data-id="344" class="font-poppins font-semibold text-sm md:text-base text-navy">Printer Setup</h3></div>
+                            <p data-id="345" class="text-text-muted text-xs md:text-sm leading-relaxed">Connect printer, install drivers</p>
+                        </div>
+                        <span data-id="346" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$39</span>
+                    </div>
+                </div>
+                <div data-id="347" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="network">
+                    <div data-id="348" class="flex items-start justify-between gap-3">
+                        <div data-id="349" class="flex-1">
+                            <div data-id="350" class="flex items-center gap-2 mb-1"><span data-id="351" aria-hidden="true">🖥️</span><h3 data-id="352" class="font-poppins font-semibold text-sm md:text-base text-navy">Remote Support Session</h3></div>
+                            <p data-id="353" class="text-text-muted text-xs md:text-sm leading-relaxed">Live remote assistance</p>
+                        </div>
+                        <span data-id="354" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$45/hr</span>
+                    </div>
+                </div>
+                <div data-id="355" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="network">
+                    <div data-id="356" class="flex items-start justify-between gap-3">
+                        <div data-id="357" class="flex-1">
+                            <div data-id="358" class="flex items-center gap-2 mb-1"><span data-id="359" aria-hidden="true">💾</span><h3 data-id="360" class="font-poppins font-semibold text-sm md:text-base text-navy">Data Backup Setup</h3></div>
+                            <p data-id="361" class="text-text-muted text-xs md:text-sm leading-relaxed">Configure automated backup solution</p>
+                        </div>
+                        <span data-id="362" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$55</span>
+                    </div>
+                </div>
+                <div data-id="363" class="pricing-card bg-bg rounded-xl p-5 border border-gray-100" data-cat="network">
+                    <div data-id="364" class="flex items-start justify-between gap-3">
+                        <div data-id="365" class="flex-1">
+                            <div data-id="366" class="flex items-center gap-2 mb-1"><span data-id="367" aria-hidden="true">📂</span><h3 data-id="368" class="font-poppins font-semibold text-sm md:text-base text-navy">File Transfer &amp; Migration</h3></div>
+                            <p data-id="369" class="text-text-muted text-xs md:text-sm leading-relaxed">Move files between devices or drives</p>
+                        </div>
+                        <span data-id="370" class="inline-flex items-center bg-cyan/10 text-cyan-dark font-semibold text-xs md:text-sm px-3 py-1 rounded-full whitespace-nowrap mt-1">$65</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: WHY CHOOSE US -->
+    <section data-id="371" id="why-us-section-b4d8" class="py-16 md:py-20 lg:py-24" aria-labelledby="why-heading-f6g2">
+        <div data-id="372" class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+            <h2 data-id="373" id="why-heading-f6g2" class="font-poppins font-bold text-2xl md:text-3xl lg:text-4xl text-navy text-center mb-12 md:mb-16">
+                Why Memphis Chooses RTE Tech Solutions
+            </h2>
+            <div data-id="374" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div data-id="375" class="benefit-card bg-card rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm text-center">
+                    <span data-id="376" class="text-4xl mb-4 block" aria-hidden="true">🏠</span>
+                    <h3 data-id="377" class="font-poppins font-semibold text-lg text-navy mb-2">On-Site Convenience</h3>
+                    <p data-id="378" class="text-text-muted text-sm leading-relaxed">We come to you. No need to drop off your device or wait in a shop.</p>
+                </div>
+                <div data-id="379" class="benefit-card bg-card rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm text-center">
+                    <span data-id="380" class="text-4xl mb-4 block" aria-hidden="true">💰</span>
+                    <h3 data-id="381" class="font-poppins font-semibold text-lg text-navy mb-2">Transparent Pricing</h3>
+                    <p data-id="382" class="text-text-muted text-sm leading-relaxed">No hidden fees. You see the price before any work begins. Diagnostic fee credited toward your repair.</p>
+                </div>
+                <div data-id="383" class="benefit-card bg-card rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm text-center">
+                    <span data-id="384" class="text-4xl mb-4 block" aria-hidden="true">🔒</span>
+                    <h3 data-id="385" class="font-poppins font-semibold text-lg text-navy mb-2">Privacy-First Service</h3>
+                    <p data-id="386" class="text-text-muted text-sm leading-relaxed">Your data stays yours. We never access personal files outside the scope of your repair.</p>
+                </div>
+                <div data-id="387" class="benefit-card bg-card rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm text-center">
+                    <span data-id="388" class="text-4xl mb-4 block" aria-hidden="true">⚡</span>
+                    <h3 data-id="389" class="font-poppins font-semibold text-lg text-navy mb-2">Fast Turnaround</h3>
+                    <p data-id="390" class="text-text-muted text-sm leading-relaxed">Most repairs and cleanups completed in a single visit when parts are available.</p>
+                </div>
+                <div data-id="391" class="benefit-card bg-card rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm text-center">
+                    <span data-id="392" class="text-4xl mb-4 block" aria-hidden="true">🛡️</span>
+                    <h3 data-id="393" class="font-poppins font-semibold text-lg text-navy mb-2">Honest Diagnostics</h3>
+                    <p data-id="394" class="text-text-muted text-sm leading-relaxed">We tell you what's wrong and what it costs — before we start. No surprise charges.</p>
+                </div>
+                <div data-id="395" class="benefit-card bg-card rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm text-center">
+                    <span data-id="396" class="text-4xl mb-4 block" aria-hidden="true">📍</span>
+                    <h3 data-id="397" class="font-poppins font-semibold text-lg text-navy mb-2">Local Memphis Expert</h3>
+                    <p data-id="398" class="text-text-muted text-sm leading-relaxed">Locally operated, community-focused, and invested in keeping Memphis connected.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: ABOUT -->
+    <section data-id="399" id="about" class="py-16 md:py-20 lg:py-24 bg-white" aria-labelledby="about-heading-c5h9">
+        <div data-id="400" class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+            <h2 data-id="401" id="about-heading-c5h9" class="font-poppins font-bold text-2xl md:text-3xl lg:text-4xl text-navy text-center mb-12 md:mb-16">
+                About RTE Tech Solutions
+            </h2>
+            <div data-id="402" class="flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-16">
+                <!-- Left: visual block -->
+                <div data-id="403" class="w-full md:w-5/12 flex-shrink-0">
+                    <div data-id="404" class="bg-gradient-to-br from-navy via-accent to-cyan rounded-2xl p-8 md:p-10 flex flex-col items-center justify-center text-center aspect-square max-w-sm mx-auto">
+                        <span data-id="405" class="text-6xl md:text-7xl mb-4" aria-hidden="true">💻</span>
+                        <span data-id="406" class="font-poppins font-bold text-white text-xl md:text-2xl">RTE Tech</span>
+                        <span data-id="407" class="font-poppins font-bold text-cyan-light text-xl md:text-2xl">Solutions</span>
+                        <span data-id="408" class="text-white/70 text-sm mt-3">Memphis, TN</span>
+                    </div>
+                </div>
+                <!-- Right: text -->
+                <div data-id="409" class="w-full md:w-7/12">
+                    <p data-id="410" class="text-text-muted text-base md:text-lg leading-relaxed mb-6">
+                        RTE Tech Solutions is a locally operated, mobile IT services provider serving Memphis, TN and the surrounding areas. We specialize in computer repair, virus removal, system optimization, and network services — bringing professional-grade tech support directly to your home or business.
+                    </p>
+                    <p data-id="411" class="text-text-muted text-base md:text-lg leading-relaxed mb-8">
+                        Whether your laptop screen is cracked, your PC is crawling with malware, or your home network needs a complete overhaul, we're here to help — by appointment, on your schedule, at your location. Our goal is simple: deliver honest, affordable, and reliable tech solutions to every customer we serve.
+                    </p>
+                    <div data-id="412" class="flex flex-col sm:flex-row gap-3">
+                        <div data-id="413" class="inline-flex items-center gap-2 bg-bg rounded-xl px-4 py-3 text-sm font-medium text-navy">
+                            <span data-id="414" aria-hidden="true">📍</span> Serving Memphis, TN &amp; Surrounding Areas
+                        </div>
+                        <div data-id="415" class="inline-flex items-center gap-2 bg-bg rounded-xl px-4 py-3 text-sm font-medium text-navy">
+                            <span data-id="416" aria-hidden="true">📅</span> By Appointment Only
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: CONTACT -->
+    <section data-id="417" id="contact" class="py-16 md:py-20 lg:py-24" aria-labelledby="contact-heading-j7l3">
+        <div data-id="418" class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+            <h2 data-id="419" id="contact-heading-j7l3" class="font-poppins font-bold text-2xl md:text-3xl lg:text-4xl text-navy text-center mb-3">
+                Get In Touch
+            </h2>
+            <p data-id="420" class="text-text-muted text-center text-sm md:text-base mb-10 md:mb-14 max-w-xl mx-auto">
+                Ready to schedule a repair or have a question? Reach out — we'll get back to you promptly.
+            </p>
+            <div data-id="421" class="flex flex-col md:flex-row gap-8 md:gap-12">
+                <!-- Left: Contact Info -->
+                <div data-id="422" class="w-full md:w-5/12 flex flex-col gap-4">
+                    <div data-id="423" class="bg-card rounded-xl p-5 border border-gray-100 shadow-sm">
+                        <div data-id="424" class="flex items-start gap-3">
+                            <span data-id="425" class="text-2xl flex-shrink-0" aria-hidden="true">📧</span>
+                            <div data-id="426">
+                                <h3 data-id="427" class="font-poppins font-semibold text-navy text-sm mb-1">Email Us</h3>
+                                <a data-id="428" href="mailto:rtetechsolutions@gmail.com" class="text-cyan hover:text-cyan-dark text-sm font-medium transition-colors break-all">rtetechsolutions@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-id="429" class="bg-card rounded-xl p-5 border border-gray-100 shadow-sm">
+                        <div data-id="430" class="flex items-start gap-3">
+                            <span data-id="431" class="text-2xl flex-shrink-0" aria-hidden="true">📍</span>
+                            <div data-id="432">
+                                <h3 data-id="433" class="font-poppins font-semibold text-navy text-sm mb-1">Service Area</h3>
+                                <p data-id="434" class="text-text-muted text-sm">Memphis, TN &amp; Surrounding Areas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-id="435" class="bg-card rounded-xl p-5 border border-gray-100 shadow-sm">
+                        <div data-id="436" class="flex items-start gap-3">
+                            <span data-id="437" class="text-2xl flex-shrink-0" aria-hidden="true">📅</span>
+                            <div data-id="438">
+                                <h3 data-id="439" class="font-poppins font-semibold text-navy text-sm mb-1">Availability</h3>
+                                <p data-id="440" class="text-text-muted text-sm">By Appointment Only</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-id="441" class="bg-card rounded-xl p-5 border border-gray-100 shadow-sm">
+                        <div data-id="442" class="flex items-start gap-3">
+                            <span data-id="443" class="text-2xl flex-shrink-0" aria-hidden="true">ℹ️</span>
+                            <div data-id="444">
+                                <h3 data-id="445" class="font-poppins font-semibold text-navy text-sm mb-1">Response Time</h3>
+                                <p data-id="446" class="text-text-muted text-sm">We aim to respond within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Contact Form -->
+                <div data-id="447" class="w-full md:w-7/12">
+                    <form data-id="448" id="contact-form-n8k4" class="bg-card rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm" novalidate>
+                        <div data-id="449" class="mb-5">
+                            <label data-id="450" for="contact-name-p2q5" class="block text-sm font-medium text-navy mb-1.5">Name <span data-id="451" class="text-red-500" aria-hidden="true">*</span></label>
+                            <input data-id="452" type="text" id="contact-name-p2q5" name="name" required autocomplete="name" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-base focus:border-cyan focus:ring-2 focus:ring-cyan/20 transition-colors bg-bg" placeholder="Your full name">
+                        </div>
+                        <div data-id="453" class="mb-5">
+                            <label data-id="454" for="contact-email-r3s6" class="block text-sm font-medium text-navy mb-1.5">Email <span data-id="455" class="text-red-500" aria-hidden="true">*</span></label>
+                            <input data-id="456" type="email" id="contact-email-r3s6" name="email" required autocomplete="email" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-base focus:border-cyan focus:ring-2 focus:ring-cyan/20 transition-colors bg-bg" placeholder="your@email.com">
+                        </div>
+                        <div data-id="457" class="mb-5">
+                            <label data-id="458" for="contact-service-t4u7" class="block text-sm font-medium text-navy mb-1.5">Service Needed <span data-id="459" class="text-red-500" aria-hidden="true">*</span></label>
+                            <select data-id="460" id="contact-service-t4u7" name="service" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-base focus:border-cyan focus:ring-2 focus:ring-cyan/20 transition-colors bg-bg appearance-none cursor-pointer">
+                                <option data-id="461" value="" disabled selected>Select a service</option>
+                                <option data-id="462" value="Laptop/Desktop Repair">Laptop/Desktop Repair</option>
+                                <option data-id="463" value="Virus & Malware Removal">Virus &amp; Malware Removal</option>
+                                <option data-id="464" value="OS Cleanup & Optimization">OS Cleanup &amp; Optimization</option>
+                                <option data-id="465" value="Network & Software Services">Network &amp; Software Services</option>
+                                <option data-id="466" value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div data-id="467" class="mb-6">
+                            <label data-id="468" for="contact-message-v5w8" class="block text-sm font-medium text-navy mb-1.5">Message <span data-id="469" class="text-red-500" aria-hidden="true">*</span></label>
+                            <textarea data-id="470" id="contact-message-v5w8" name="message" required rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-base focus:border-cyan focus:ring-2 focus:ring-cyan/20 transition-colors bg-bg resize-y" placeholder="Describe your issue or question..."></textarea>
+                        </div>
+                        <button data-id="471" type="submit" id="contact-submit-x6y9" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-cyan hover:bg-cyan-dark text-white font-semibold px-8 py-3.5 rounded-xl text-base transition-colors min-h-[44px] shadow-lg shadow-cyan/20" aria-label="Send your message">
+                            Send Message
+                            <i data-id="472" data-lucide="arrow-right" class="w-5 h-5" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer data-id="473" id="site-footer-z9a1" class="bg-navy-dark text-white" role="contentinfo">
+    <div data-id="474" class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-10 md:py-12">
+        <!-- Top Row -->
+        <div data-id="475" class="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+            <span data-id="476" class="font-poppins font-bold text-xl md:text-2xl">RTE Tech Solutions</span>
+            <nav data-id="477" class="flex flex-wrap items-center justify-center gap-4 md:gap-6" aria-label="Footer navigation">
+                <a data-id="478" href="#hero" class="text-white/80 hover:text-cyan text-sm transition-colors">Home</a>
+                <a data-id="479" href="#services" class="text-white/80 hover:text-cyan text-sm transition-colors">Services</a>
+                <a data-id="480" href="#pricing" class="text-white/80 hover:text-cyan text-sm transition-colors">Pricing</a>
+                <a data-id="481" href="#about" class="text-white/80 hover:text-cyan text-sm transition-colors">About</a>
+                <a data-id="482" href="#contact" class="text-white/80 hover:text-cyan text-sm transition-colors">Contact</a>
+            </nav>
+        </div>
+        <!-- Middle Row -->
+        <div data-id="483" class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-white/60 text-sm mb-8">
+            <span data-id="484" class="flex items-center gap-1.5"><span data-id="485" aria-hidden="true">📍</span> Memphis, TN &amp; Surrounding Areas</span>
+            <span data-id="486" class="hidden sm:block" aria-hidden="true">|</span>
+            <a data-id="487" href="mailto:rtetechsolutions@gmail.com" class="flex items-center gap-1.5 hover:text-cyan transition-colors"><span data-id="488" aria-hidden="true">📧</span> rtetechsolutions@gmail.com</a>
+            <span data-id="489" class="hidden sm:block" aria-hidden="true">|</span>
+            <span data-id="490" class="flex items-center gap-1.5"><span data-id="491" aria-hidden="true">📅</span> By Appointment Only</span>
+        </div>
+        <!-- Divider -->
+        <hr data-id="492" class="border-white/10 mb-6" aria-hidden="true">
+        <!-- Bottom Row -->
+        <div data-id="493" class="text-center text-white/50 text-xs md:text-sm">
+            <p data-id="494">&copy; 2026 RTE Tech Solutions. All rights reserved. | Prices are estimates and may vary.</p>
+            <p data-id="495" class="mt-2">Made by Copilot</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Guard Lucide icons — progressive enhancement
+    if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+        lucide.createIcons();
+    }
+
+    // ========== MOBILE MENU ==========
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn-x7m2');
+    const mobileMenu = document.getElementById('mobile-menu-nav-q4w8');
+    const mobileMenuClose = document.getElementById('mobile-menu-close-r5n1');
+
+    function openMobileMenu() {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        mobileMenuClose.focus();
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.focus();
+        document.body.style.overflow = '';
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+    // Close on mobile nav link click
+    document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+            closeMobileMenu();
+        }
+    });
+
+    // ========== NAV SHADOW ON SCROLL ==========
+    const header = document.getElementById('site-header-h3k9');
+    let lastScroll = 0;
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 10) {
+            header.classList.add('nav-shadow');
+        } else {
+            header.classList.remove('nav-shadow');
+        }
+    }, { passive: true });
+
+    // ========== ACTIVE NAV LINK HIGHLIGHTING ==========
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link[data-nav]');
+
+    function updateActiveNav() {
+        let current = '';
+        sections.forEach(function(section) {
+            var sectionTop = section.offsetTop - 100;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        // Map section IDs to nav data attributes
+        var navMap = {
+            'hero': 'hero',
+            'services': 'services',
+            'pricing': 'pricing',
+            'about': 'about',
+            'contact': 'contact'
+        };
+        navLinks.forEach(function(link) {
+            link.classList.remove('active');
+            if (navMap[current] && link.dataset.nav === navMap[current]) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
+
+    // ========== PRICING FILTER TABS ==========
+    const tabs = document.querySelectorAll('.tab-btn');
+    const pricingCards = document.querySelectorAll('.pricing-card');
+
+    function filterPricing(category) {
+        tabs.forEach(function(tab) {
+            tab.classList.remove('active-tab');
+            tab.setAttribute('aria-selected', 'false');
+            if (tab.dataset.filter === category) {
+                tab.classList.add('active-tab');
+                tab.setAttribute('aria-selected', 'true');
+            }
+        });
+
+        pricingCards.forEach(function(card) {
+            if (category === 'all' || card.dataset.cat === category) {
+                card.classList.remove('hidden-card');
+                card.style.display = '';
+            } else {
+                card.classList.add('hidden-card');
+                // Use a small delay to allow CSS transition
+                setTimeout(function() {
+                    if (card.classList.contains('hidden-card')) {
+                        card.style.display = 'none';
+                    }
+                }, 300);
+            }
+        });
+    }
+
+    tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            filterPricing(tab.dataset.filter);
+        });
+    });
+
+    // ========== SERVICE CARD -> PRICING TAB LINK ==========
+    document.querySelectorAll('.pricing-scroll-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            var targetTab = link.dataset.targetTab;
+            if (targetTab) {
+                // Small delay to let scroll happen first
+                setTimeout(function() {
+                    filterPricing(targetTab);
+                }, 400);
+            }
+        });
+    });
+
+    // ========== CONTACT FORM — MAILTO ==========
+    var contactForm = document.getElementById('contact-form-n8k4');
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var name = document.getElementById('contact-name-p2q5').value.trim();
+        var email = document.getElementById('contact-email-r3s6').value.trim();
+        var service = document.getElementById('contact-service-t4u7').value;
+        var message = document.getElementById('contact-message-v5w8').value.trim();
+
+        // Validation
+        var isValid = true;
+        var fields = [
+            { el: document.getElementById('contact-name-p2q5'), val: name },
+            { el: document.getElementById('contact-email-r3s6'), val: email },
+            { el: document.getElementById('contact-service-t4u7'), val: service },
+            { el: document.getElementById('contact-message-v5w8'), val: message }
+        ];
+
+        fields.forEach(function(f) {
+            if (!f.val) {
+                f.el.style.borderColor = '#ef4444';
+                isValid = false;
+            } else {
+                f.el.style.borderColor = '';
+            }
+        });
+
+        // Email format check
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            document.getElementById('contact-email-r3s6').style.borderColor = '#ef4444';
+            isValid = false;
+        }
+
+        if (!isValid) return;
+
+        var subject = encodeURIComponent('Service Request: ' + service + ' — from ' + name);
+        var body = encodeURIComponent(
+            'Name: ' + name + '\n' +
+            'Email: ' + email + '\n' +
+            'Service: ' + service + '\n\n' +
+            'Message:\n' + message
+        );
+
+        window.location.href = 'mailto:rtetechsolutions@gmail.com?subject=' + subject + '&body=' + body;
+    });
+
+    // Clear red border on input
+    ['contact-name-p2q5', 'contact-email-r3s6', 'contact-service-t4u7', 'contact-message-v5w8'].forEach(function(id) {
+        var el = document.getElementById(id);
+        el.addEventListener('input', function() {
+            el.style.borderColor = '';
+        });
+        el.addEventListener('change', function() {
+            el.style.borderColor = '';
+        });
+    });
+</script>
+
+</body>
+</html>
