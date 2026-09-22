@@ -58,29 +58,31 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); }
 
-        html, body {
+        .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 9999;
+    padding: 0.75rem 1.25rem;
+    background: var(--cyan);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 0 0 0.5rem 0.5rem;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+}
+
+/* Viewport Lock */
+html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
 
-
-        .skip-link {
-            position: absolute;
-            top: -100%;
-            left: 1rem;
-            z-index: 9999;
-            padding: 0.75rem 1.25rem;
-            background: var(--cyan);
-            color: #fff;
-            font-weight: 600;
-            border-radius: 0 0 0.5rem 0.5rem;
-            transition: top 0.2s;
-        }
-        .skip-link:focus {
-            top: 0;
-            outline: 2px solid var(--navy);
-            outline-offset: 2px;
-        }
 
         *:focus-visible {
             outline: 2px solid var(--cyan);
