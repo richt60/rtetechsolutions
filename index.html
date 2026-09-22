@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>RTE Tech Solutions – Official Website</title>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4TMNNKYEL"></script>
@@ -57,6 +57,12 @@
 
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); }
+
+        html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 
         .skip-link {
             position: absolute;
@@ -933,6 +939,12 @@
             header.classList.remove('nav-shadow');
         }
     }, { passive: true });
+
+    document.addEventListener("gesturestart", function (e) {
+    e.preventDefault();
+    document.body.style.zoom = 1;
+});
+
 
     // ========== ACTIVE NAV LINK HIGHLIGHTING ==========
     const sections = document.querySelectorAll('section[id]');
