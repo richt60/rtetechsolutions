@@ -183,7 +183,7 @@ html, body {
 
 <!-- HEADER / NAV -->
 <header data-id="3" id="site-header-h3k9" class="sticky top-0 z-50 bg-white transition-shadow duration-300" role="banner">
-    <div data-id="4" class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between min-h-16 h-auto py-2">
+    <div data-id="4" class="sticky top-0 z-50 bg-white/90 backdrop-blur-md max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between min-h-16 h-auto py-2">
 
         <a data-id="5" href="#hero" class="font-poppins font-bold text-xl md:text-2xl text-navy tracking-tight" aria-label="RTE Tech Solutions - Home">
             RTE Tech Solutions
@@ -1099,5 +1099,38 @@ html, body {
     });
 </script>
 
+<!-- Mobile Floating Call/Menu Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-white shadow-lg border-t md:hidden">
+    <div class="flex justify-around items-center py-3">
+
+        <!-- Call Button -->
+        <a href="tel:9014437051" class="flex flex-col items-center text-navy">
+            <i data-lucide="phone" class="w-6 h-6"></i>
+            <span class="text-xs font-semibold">Call</span>
+        </a>
+
+        <!-- Menu Button -->
+        <button id="mobile-menu-btn-floating" class="flex flex-col items-center text-navy">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+            <span class="text-xs font-semibold">Menu</span>
+        </button>
+
+    </div>
+</div>
+
+    <script>
+document.getElementById('mobile-menu-btn-floating')
+    .addEventListener('click', () => {
+        document.getElementById('mobile-menu-btn-x7m2').click();
+    });
+</script>
+
+    <script>
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    };
+</script>
+
+    
 </body>
 </html>
