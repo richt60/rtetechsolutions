@@ -1118,39 +1118,37 @@ html, body {
     </div>
 </div>
 
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js?v=10"></script>
+
 <script>
-    lucide.createIcons();
-</script>
+document.addEventListener("DOMContentLoaded", () => {
 
+  lucide.createIcons();
 
-  <script>
-document.getElementById('mobile-menu-btn-floating')
+  document.getElementById('mobile-menu-btn-floating')
     .addEventListener('click', () => {
-        document.getElementById('mobile-menu-btn-x7mz').click();
+      document.getElementById('mobile-menu-btn-x7mz').click();
     });
-</script>
 
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
 
-    <script>
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    };
-</script>
+  const mobileMenu = document.getElementById('mobile-menu-nav-q4w8');
+  const openBtn = document.getElementById('mobile-menu-btn-x7mz');
+  const closeBtn = document.getElementById('mobile-menu-close-h5n1');
 
-    <script>
-const mobileMenu = document.getElementById('mobile-menu-nav-q4w8');
-const openBtn = document.getElementById('mobile-menu-btn-x7mz');
-const closeBtn = document.getElementById('mobile-menu-close-h5n1');
-
-openBtn.addEventListener('click', () => {
+  openBtn.addEventListener('click', () => {
     mobileMenu.classList.remove('hidden');
-});
+  });
 
-closeBtn.addEventListener('click', () => {
+  closeBtn.addEventListener('click', () => {
     mobileMenu.classList.add('hidden');
+  });
+
 });
 </script>
+
 
     
 </body>
