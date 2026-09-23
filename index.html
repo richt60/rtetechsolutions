@@ -1118,22 +1118,38 @@ html, body {
     </div>
 </div>
 
-    <script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
     lucide.createIcons();
 </script>
 
 
-    <script>
+  <script>
 document.getElementById('mobile-menu-btn-floating')
     .addEventListener('click', () => {
-        document.getElementById('mobile-menu-btn-x7m2').click();
+        document.getElementById('mobile-menu-btn-x7mz').click();
     });
 </script>
+
 
     <script>
     window.onbeforeunload = function () {
         window.scrollTo(0, 0);
     };
+</script>
+
+    <script>
+const mobileMenu = document.getElementById('mobile-menu-nav-q4w8');
+const openBtn = document.getElementById('mobile-menu-btn-x7mz');
+const closeBtn = document.getElementById('mobile-menu-close-h5n1');
+
+openBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
+});
+
+closeBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+});
 </script>
 
     
